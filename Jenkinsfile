@@ -27,6 +27,11 @@ pipeline {
             steps {
                 sh 'npm test -- --watch=false --browsers=ChromeHeadless'
             }
+            post {
+              always {
+                junit 'test-results/test-results.xml'
+            }
+        }
         }
 
         stage('Build Angular App') {
@@ -42,9 +47,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            junit 'test-results/test-results.xml'
-        }
-    }
+
 }
