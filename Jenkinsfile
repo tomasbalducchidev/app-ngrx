@@ -15,10 +15,9 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Limpiar node_modules y package-lock.json
                     sh 'rm -rf node_modules package-lock.json'
-                    // Instalar dependencias
-                    sh 'npm install'
+                    sh 'node --max_old_space_size=4096 $(which npm) install'
+                    sh 'npm install --no-cache'
                 }
             }
         }
