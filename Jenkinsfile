@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/your-repo.git', branch: 'main'
+                git url: 'https://github.com/tomasbalducchidev/app-ngrx.git', branch: 'main'
             }
         }
 
@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Ejemplo: Copiar archivos a un servidor web (Nginx o S3)
-                sh 'scp -r dist/your-angular-app/ user@your-deployment-server:/var/www/html/'
+                sh 'scp -r dist/app-ngrx/ ubuntu@18.117.175.251:8081/var/www/html/'
             }
         }
     }
