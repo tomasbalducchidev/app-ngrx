@@ -28,14 +28,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'scp -r dist/app-ngrx/ ubuntu@172.31.28.46/var/www/html/'
+                sh 'scp -r dist/app-ngrx/ ubuntu@ip-172-31-28-46:/var/www/html/'
             }
         }
     }
 
     post {
         always {
-            // Publicar resultados de tests
             junit 'test-results/test-results.xml'
         }
     }
