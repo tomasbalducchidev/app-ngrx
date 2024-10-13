@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Ejemplo: Copiar archivos a un servidor web (Nginx o S3)
-                sh 'scp -r dist/app-ngrx/ ubuntu@18.117.175.251:8081/var/www/html/'
+                sh 'scp -r dist/app-ngrx/ ubuntu@18.117.175.251:80/var/www/html/'
             }
         }
     }
