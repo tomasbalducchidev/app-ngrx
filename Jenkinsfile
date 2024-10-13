@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    // environment {
-    //     // Define Node.js path if necessary
-    //     NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-    //     PATH = "${NODEJS_HOME}/bin:${env.PATH}"
-    // }
-
     stages {
         stage('Clone Repository') {
             steps {
@@ -34,8 +28,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Ejemplo: Copiar archivos a un servidor web (Nginx o S3)
-                sh 'scp -r dist/app-ngrx/ ubuntu@18.117.175.251:8081/var/www/html/'
+                sh 'scp -r dist/app-ngrx/ ubuntu@172.31.28.46/var/www/html/'
             }
         }
     }
