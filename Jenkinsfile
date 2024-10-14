@@ -12,13 +12,9 @@ pipeline {
             }
         }
 
-        stage('Install Dependenciesss') {
+        stage('Install Dependencies') {
     steps {
-        script {
-            timeout(time: 10, unit: 'MINUTES') {
-                sh 'npm ci'
-            }
-        }
+        sh 'npm ci'
     }
 }
 
